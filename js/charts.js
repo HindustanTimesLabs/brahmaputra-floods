@@ -306,7 +306,7 @@ $(document).ready(function(){
         })
         .transition()
         .duration(300)
-        .ease('circle')
+        .ease('quad-out')
           .attr('height',0)
           .remove();
 
@@ -331,7 +331,7 @@ $(document).ready(function(){
         })
         .transition()
         .duration(300)
-        .ease('circle')
+        .ease('quad-out')
           .attr("height", height);
 
       var bar2012 = svg2012.selectAll(".bar")
@@ -347,7 +347,7 @@ $(document).ready(function(){
       bar2012.exit()
         .transition()
         .duration(300)
-        .ease('circle')
+        .ease('quad-out')
           .attr('y',0)
           .attr('height',0)
           .remove();
@@ -369,7 +369,7 @@ $(document).ready(function(){
         })
         .transition()
         .duration(300)
-        .ease('circle')
+        .ease('quad-out')
           .attr("y", function(d) {
             return y(d[category]);
           })
@@ -463,7 +463,7 @@ $(document).ready(function(){
         })
         .transition()
         .duration(300)
-        .ease('circle')
+        .ease('quad-out')
           .attr('height',0)
           .remove();
 
@@ -488,7 +488,7 @@ $(document).ready(function(){
         })
         .transition()
         .duration(300)
-        .ease('circle')
+        .ease('quad-out')
           .attr("height", height);
 
       var bar2013 = svg2013.selectAll(".bar")
@@ -504,7 +504,7 @@ $(document).ready(function(){
       bar2013.exit()
         .transition()
         .duration(300)
-        .ease('circle')
+        .ease('quad-out')
           .attr('y',0)
           .attr('height',0)
           .remove();
@@ -526,7 +526,7 @@ $(document).ready(function(){
         })
         .transition()
         .duration(300)
-        .ease('circle')
+        .ease('quad-out')
           .attr("y", function(d) {
             return y(d[category]);
           })
@@ -619,7 +619,7 @@ $(document).ready(function(){
         })
         .transition()
         .duration(300)
-        .ease('circle')
+        .ease('quad-out')
           .attr('height',0)
           .remove();
 
@@ -644,7 +644,7 @@ $(document).ready(function(){
         })
         .transition()
         .duration(300)
-        .ease('circle')
+        .ease('quad-out')
           .attr("height", height);
 
       var bar2014 = svg2014.selectAll(".bar")
@@ -660,7 +660,7 @@ $(document).ready(function(){
       bar2014.exit()
         .transition()
         .duration(300)
-        .ease('circle')
+        .ease('quad-out')
           .attr('y',0)
           .attr('height',0)
           .remove();
@@ -682,7 +682,7 @@ $(document).ready(function(){
         })
         .transition()
         .duration(300)
-        .ease('circle')
+        .ease('quad-out')
           .attr("y", function(d) {
             return y(d[category]);
           })
@@ -775,7 +775,7 @@ $(document).ready(function(){
         })
         .transition()
         .duration(300)
-        .ease('circle')
+        .ease('quad-out')
           .attr('height',0)
           .remove();
 
@@ -800,7 +800,7 @@ $(document).ready(function(){
         })
         .transition()
         .duration(300)
-        .ease('circle')
+        .ease('quad-out')
           .attr("height", height);
 
       var bar2015 = svg2015.selectAll(".bar")
@@ -816,7 +816,7 @@ $(document).ready(function(){
       bar2015.exit()
         .transition()
         .duration(300)
-        .ease('circle')
+        .ease('quad-out')
           .attr('y',0)
           .attr('height',0)
           .remove();
@@ -838,7 +838,7 @@ $(document).ready(function(){
         })
         .transition()
         .duration(300)
-        .ease('circle')
+        .ease('quad-out')
           .attr("y", function(d) {
             return y(d[category]);
           })
@@ -931,7 +931,7 @@ $(document).ready(function(){
         })
         .transition()
         .duration(300)
-        .ease('circle')
+        .ease('quad-out')
           .attr('height',0)
           .remove();
 
@@ -956,7 +956,7 @@ $(document).ready(function(){
         })
         .transition()
         .duration(300)
-        .ease('circle')
+        .ease('quad-out')
           .attr("height", height);
 
       var bar2016 = svg2016.selectAll(".bar")
@@ -972,7 +972,7 @@ $(document).ready(function(){
       bar2016.exit()
         .transition()
         .duration(300)
-        .ease('circle')
+        .ease('quad-out')
           .attr('y',0)
           .attr('height',0)
           .remove();
@@ -994,7 +994,7 @@ $(document).ready(function(){
         })
         .transition()
         .duration(300)
-        .ease('circle')
+        .ease('quad-out')
           .attr("y", function(d) {
             return y(d[category]);
           })
