@@ -306,7 +306,7 @@ $(document).ready(function(){
         })
         .transition()
         .duration(300)
-        .ease('exp')
+        .ease('cubic')
           .attr('height',0)
           .remove();
 
@@ -331,7 +331,7 @@ $(document).ready(function(){
         })
         .transition()
         .duration(300)
-        .ease('quad')
+        .ease('cubic')
           .attr("height", height);
 
       var bar2012 = svg2012.selectAll(".bar")
@@ -347,7 +347,7 @@ $(document).ready(function(){
       bar2012.exit()
         .transition()
         .duration(300)
-        .ease('exp')
+        .ease('cubic')
           .attr('y',0)
           .attr('height',0)
           .remove();
@@ -369,7 +369,7 @@ $(document).ready(function(){
         })
         .transition()
         .duration(300)
-        .ease('quad')
+        .ease('cubic')
           .attr("y", function(d) {
             return y(d[category]);
           })
@@ -381,29 +381,32 @@ $(document).ready(function(){
 
       $('#chart_2012 .bar-text').remove();
 
-      var barText2012 = svg2012.selectAll('.bar-text')
-          .data(data2012)
-        .enter().append('text')
-          .attr('text-anchor','middle')
-          .attr('class',function(d){if (d[category]== max2012){return 'bar-text text-max'} else {return 'bar-text'}})
-          .attr('y',function(d){
-            return y(d[category])-2;
-          })
-          .attr('x',function(d){
-            var xDate = x2012(d.date);
-            if (xDate < 30){
-              return 30;
-            } else {
-              return x2012(d.date);
-            }
-          })
-          .text(function(d){
-            if (d[category] == max2012 && d.dateStringShort!='Sep. 28' && d.dateStringShort != 'Sep. 29'){
-              return 'High: '+d.dateStringShort+'';
-            } else {
-              return '';
-            }
-          });;
+      setTimeout(function(){
+        var barText2012 = svg2012.selectAll('.bar-text')
+            .data(data2012)
+          .enter().append('text')
+            .attr('text-anchor','middle')
+            .attr('class',function(d){if (d[category]== max2012){return 'bar-text text-max'} else {return 'bar-text'}})
+            .attr('y',function(d){
+              return y(d[category])-2;
+            })
+            .attr('x',function(d){
+              var xDate = x2012(d.date);
+              if (xDate < 30){
+                return 30;
+              } else {
+                return x2012(d.date);
+              }
+            })
+            .text(function(d){
+              if (d[category] == max2012 && d.dateStringShort!='Sep. 28' && d.dateStringShort != 'Sep. 29'){
+                return 'High: '+d.dateStringShort+'';
+              } else {
+                return '';
+              }
+            });
+      },300);
+
 
       $('#g-2012').append($('text#chart-year-2012'));
 
@@ -460,7 +463,7 @@ $(document).ready(function(){
         })
         .transition()
         .duration(300)
-        .ease('exp')
+        .ease('cubic')
           .attr('height',0)
           .remove();
 
@@ -485,7 +488,7 @@ $(document).ready(function(){
         })
         .transition()
         .duration(300)
-        .ease('quad')
+        .ease('cubic')
           .attr("height", height);
 
       var bar2013 = svg2013.selectAll(".bar")
@@ -501,7 +504,7 @@ $(document).ready(function(){
       bar2013.exit()
         .transition()
         .duration(300)
-        .ease('exp')
+        .ease('cubic')
           .attr('y',0)
           .attr('height',0)
           .remove();
@@ -523,7 +526,7 @@ $(document).ready(function(){
         })
         .transition()
         .duration(300)
-        .ease('quad')
+        .ease('cubic')
           .attr("y", function(d) {
             return y(d[category]);
           })
@@ -535,29 +538,31 @@ $(document).ready(function(){
 
       $('#chart_2013 .bar-text').remove();
 
-      var barText2013 = svg2013.selectAll('.bar-text')
-          .data(data2013)
-        .enter().append('text')
-          .attr('text-anchor','middle')
-          .attr('class',function(d){if (d[category]== max2013){return 'bar-text text-max'} else {return 'bar-text'}})
-          .attr('y',function(d){
-            return y(d[category])-2;
-          })
-          .attr('x',function(d){
-            var xDate = x2013(d.date);
-            if (xDate < 30){
-              return 30;
-            } else {
-              return x2013(d.date);
-            }
-          })
-          .text(function(d){
-            if (d[category] == max2013){
-              return 'High: '+d.dateStringShort+'';
-            } else {
-              return '';
-            }
-          });;
+      setTimeout(function(){
+        var barText2013 = svg2013.selectAll('.bar-text')
+            .data(data2013)
+          .enter().append('text')
+            .attr('text-anchor','middle')
+            .attr('class',function(d){if (d[category]== max2013){return 'bar-text text-max'} else {return 'bar-text'}})
+            .attr('y',function(d){
+              return y(d[category])-2;
+            })
+            .attr('x',function(d){
+              var xDate = x2013(d.date);
+              if (xDate < 30){
+                return 30;
+              } else {
+                return x2013(d.date);
+              }
+            })
+            .text(function(d){
+              if (d[category] == max2013){
+                return 'High: '+d.dateStringShort+'';
+              } else {
+                return '';
+              }
+            });
+      }, 300);
 
       $('#g-2013').append($('text#chart-year-2013'));
 
@@ -614,7 +619,7 @@ $(document).ready(function(){
         })
         .transition()
         .duration(300)
-        .ease('exp')
+        .ease('cubic')
           .attr('height',0)
           .remove();
 
@@ -639,7 +644,7 @@ $(document).ready(function(){
         })
         .transition()
         .duration(300)
-        .ease('quad')
+        .ease('cubic')
           .attr("height", height);
 
       var bar2014 = svg2014.selectAll(".bar")
@@ -655,7 +660,7 @@ $(document).ready(function(){
       bar2014.exit()
         .transition()
         .duration(300)
-        .ease('exp')
+        .ease('cubic')
           .attr('y',0)
           .attr('height',0)
           .remove();
@@ -677,7 +682,7 @@ $(document).ready(function(){
         })
         .transition()
         .duration(300)
-        .ease('quad')
+        .ease('cubic')
           .attr("y", function(d) {
             return y(d[category]);
           })
@@ -689,29 +694,31 @@ $(document).ready(function(){
 
       $('#chart_2014 .bar-text').remove();
 
-      var barText2014 = svg2014.selectAll('.bar-text')
-          .data(data2014)
-        .enter().append('text')
-          .attr('text-anchor','middle')
-          .attr('class',function(d){if (d[category]== max2014){return 'bar-text text-max'} else {return 'bar-text'}})
-          .attr('y',function(d){
-            return y(d[category])-2;
-          })
-          .attr('x',function(d){
-            var xDate = x2014(d.date);
-            if (xDate < 30){
-              return 30;
-            } else {
-              return x2014(d.date);
-            }
-          })
-          .text(function(d){
-            if (d[category] == max2014){
-              return 'High: '+d.dateStringShort+'';
-            } else {
-              return '';
-            }
-          });;
+      setTimeout(function(){
+        var barText2014 = svg2014.selectAll('.bar-text')
+            .data(data2014)
+          .enter().append('text')
+            .attr('text-anchor','middle')
+            .attr('class',function(d){if (d[category]== max2014){return 'bar-text text-max'} else {return 'bar-text'}})
+            .attr('y',function(d){
+              return y(d[category])-2;
+            })
+            .attr('x',function(d){
+              var xDate = x2014(d.date);
+              if (xDate < 30){
+                return 30;
+              } else {
+                return x2014(d.date);
+              }
+            })
+            .text(function(d){
+              if (d[category] == max2014){
+                return 'High: '+d.dateStringShort+'';
+              } else {
+                return '';
+              }
+            });
+      }, 300);
 
       $('#g-2014').append($('text#chart-year-2014'));
 
@@ -768,7 +775,7 @@ $(document).ready(function(){
         })
         .transition()
         .duration(300)
-        .ease('exp')
+        .ease('cubic')
           .attr('height',0)
           .remove();
 
@@ -793,7 +800,7 @@ $(document).ready(function(){
         })
         .transition()
         .duration(300)
-        .ease('quad')
+        .ease('cubic')
           .attr("height", height);
 
       var bar2015 = svg2015.selectAll(".bar")
@@ -809,7 +816,7 @@ $(document).ready(function(){
       bar2015.exit()
         .transition()
         .duration(300)
-        .ease('exp')
+        .ease('cubic')
           .attr('y',0)
           .attr('height',0)
           .remove();
@@ -831,7 +838,7 @@ $(document).ready(function(){
         })
         .transition()
         .duration(300)
-        .ease('quad')
+        .ease('cubic')
           .attr("y", function(d) {
             return y(d[category]);
           })
@@ -843,29 +850,31 @@ $(document).ready(function(){
 
       $('#chart_2015 .bar-text').remove();
 
-      var barText2015 = svg2015.selectAll('.bar-text')
-          .data(data2015)
-        .enter().append('text')
-          .attr('text-anchor','middle')
-          .attr('class',function(d){if (d[category]== max2015){return 'bar-text text-max'} else {return 'bar-text'}})
-          .attr('y',function(d){
-            return y(d[category])-2;
-          })
-          .attr('x',function(d){
-            var xDate = x2015(d.date);
-            if (xDate < 30){
-              return 30;
-            } else {
-              return x2015(d.date);
-            }
-          })
-          .text(function(d){
-            if (d[category] == max2015 && d.dateStringShort != 'Sep. 4'){
-              return 'High: '+d.dateStringShort+'';
-            } else {
-              return '';
-            }
-          });;
+      setTimeout(function(){
+        var barText2015 = svg2015.selectAll('.bar-text')
+            .data(data2015)
+          .enter().append('text')
+            .attr('text-anchor','middle')
+            .attr('class',function(d){if (d[category]== max2015){return 'bar-text text-max'} else {return 'bar-text'}})
+            .attr('y',function(d){
+              return y(d[category])-2;
+            })
+            .attr('x',function(d){
+              var xDate = x2015(d.date);
+              if (xDate < 30){
+                return 30;
+              } else {
+                return x2015(d.date);
+              }
+            })
+            .text(function(d){
+              if (d[category] == max2015 && d.dateStringShort != 'Sep. 4'){
+                return 'High: '+d.dateStringShort+'';
+              } else {
+                return '';
+              }
+            });
+      }, 300);
 
       $('#g-2015').append($('text#chart-year-2015'));
 
@@ -922,7 +931,7 @@ $(document).ready(function(){
         })
         .transition()
         .duration(300)
-        .ease('exp')
+        .ease('cubic')
           .attr('height',0)
           .remove();
 
@@ -947,7 +956,7 @@ $(document).ready(function(){
         })
         .transition()
         .duration(300)
-        .ease('quad')
+        .ease('cubic')
           .attr("height", height);
 
       var bar2016 = svg2016.selectAll(".bar")
@@ -963,7 +972,7 @@ $(document).ready(function(){
       bar2016.exit()
         .transition()
         .duration(300)
-        .ease('exp')
+        .ease('cubic')
           .attr('y',0)
           .attr('height',0)
           .remove();
@@ -985,7 +994,7 @@ $(document).ready(function(){
         })
         .transition()
         .duration(300)
-        .ease('quad')
+        .ease('cubic')
           .attr("y", function(d) {
             return y(d[category]);
           })
@@ -997,29 +1006,31 @@ $(document).ready(function(){
 
       $('#chart_2016 .bar-text').remove();
 
-      var barText2016 = svg2016.selectAll('.bar-text')
-          .data(data2016)
-        .enter().append('text')
-          .attr('text-anchor','middle')
-          .attr('class',function(d){if (d[category]== max2016){return 'bar-text text-max'} else {return 'bar-text'}})
-          .attr('y',function(d){
-            return y(d[category])-2;
-          })
-          .attr('x',function(d){
-            var xDate = x2016(d.date);
-            if (xDate < 30){
-              return 30;
-            } else {
-              return x2016(d.date);
-            }
-          })
-          .text(function(d){
-            if (d[category] == max2016){
-              return 'High: '+d.dateStringShort+'';
-            } else {
-              return '';
-            }
-          });;
+      setTimeout(function(){
+        var barText2016 = svg2016.selectAll('.bar-text')
+            .data(data2016)
+          .enter().append('text')
+            .attr('text-anchor','middle')
+            .attr('class',function(d){if (d[category]== max2016){return 'bar-text text-max'} else {return 'bar-text'}})
+            .attr('y',function(d){
+              return y(d[category])-2;
+            })
+            .attr('x',function(d){
+              var xDate = x2016(d.date);
+              if (xDate < 30){
+                return 30;
+              } else {
+                return x2016(d.date);
+              }
+            })
+            .text(function(d){
+              if (d[category] == max2016){
+                return 'High: '+d.dateStringShort+'';
+              } else {
+                return '';
+              }
+            });
+      }, 300);
 
       $('#g-2016').append($('text#chart-year-2016'));
 
