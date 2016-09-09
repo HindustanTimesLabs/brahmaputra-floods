@@ -3,7 +3,7 @@ $(document).ready(function(){
   // share links
   var url = window.location.href;
 
-  var twitterShare = 'https://twitter.com/home?status=Old%20Man%20River%20' + url + ' via @htTweets';
+  var twitterShare = 'https://twitter.com/home?status=Every year, flooding and erosion on the Brahmaputra become more destructive. ' + url + ' via @htTweets';
   $('.twitter-share').attr('href', twitterShare);
   var facebookShare = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
   $('.facebook-share').attr('href', facebookShare);

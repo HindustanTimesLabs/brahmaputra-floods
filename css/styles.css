@@ -88,13 +88,23 @@ a:hover {
   margin-bottom: 20px;
   font-weight: 300;
 }
+.copy .first-letter {
+  float: left;
+  font-size: 4em;
+  line-height: 1;
+  padding-top: 5px;
+  padding-right: 5px;
+  margin-bottom: -1px;
+  font-family: "Merriweather", sans-serif;
+  font-weight: bold;
+}
 .copy .image-in-between {
   margin-left: -15%;
   margin-right: -15%;
 }
 .copy .image-in-between p.image-caption {
   margin-top: 5px;
-  color:#2980b9;
+  color: #777;
   font-size: 1em;
   font-weight: 400;
   font-family: "Lato", sans-serif;
@@ -141,7 +151,7 @@ a:hover {
   border-bottom: 2px solid #2980b9;
 }
 p.sub-credits {
-  color: #666;
+  color: #777;
   font-style: italic;
 }
 
@@ -190,6 +200,10 @@ footer a {
 
 
 @media only screen and (max-width: 991px){
+  /*copy*/
+  .copy .first-letter {
+    font-size: 4em;
+  }
   /*nav*/
   .navbar-header {
     float: left;
@@ -262,6 +276,9 @@ footer a {
   .copy .image-in-between {
     margin-left: 0%;
     margin-right: 0%;
+  }
+  .copy .first-letter {
+    font-size: 3.25em;
   }
   .copy p {
     font-size: 1em;
