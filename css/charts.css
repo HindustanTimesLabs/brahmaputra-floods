@@ -36,12 +36,15 @@ select {
 }
 .chart-source {
   font-size: .9em;
-  color: #999;
+  color: #777;
 }
 
 /*AXES*/
 .y.axis {
   font-size: .8em;
+}
+.y.axis path {
+  stroke-width: 2;
 }
 .axis path {
   stroke-width: 1;

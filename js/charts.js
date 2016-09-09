@@ -176,7 +176,7 @@ $(document).ready(function(){
       .attr("id","g-2016")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  function drawChart(category){
+  function drawChart(category, repeat){
 
     // certain variables change depending upon the category
     function extras(x){
@@ -1040,14 +1040,22 @@ $(document).ready(function(){
       // y axis font size
       $('.y.axis').css('font-size',extras.ySize);
 
+      // have to do this because of an apparent bug where the y-axis path does not display
+      // until the chart changes
+      if (repeat == 'first'){
+        $('.y.axis path').css('stroke-width',1.01);
+      } else {
+        $('.y.axis path').css('stroke-width',1)
+      }
+
     });
+
   }
 
-  drawChart('villages');
+  drawChart('villages','first');
 
   $('select').change(function(){
-    drawChart($(this).val());
-    $('.y.axis path').css('stroke-width',1);
+    drawChart($(this).val(),'notfirst');
   });
 
   // convert data types
