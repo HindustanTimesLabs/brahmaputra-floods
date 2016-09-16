@@ -1,10 +1,12 @@
+html {
+  overflow-x: hidden;
+}
 body {
   background: #f7f7f7;
   color: #3a403d;
   font-family: 'Lato', sans-serif;
   padding-top: 50px;
   font-size: 16px;
-  overflow-x:none;
 }
 a {
   color: #2980b9;
@@ -39,23 +41,24 @@ a:hover {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/man-on-river.jpg', sizingMethod='scale');
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/man-on-river.jpg', sizingMethod='scale')";
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/man-on-river.jpg', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/man-on-river.jpg', sizingMethod='scale')";
   padding-top: 40px;
   padding-bottom: 40px;
   margin-bottom: 40px;
   color: #fff;
-  text-shadow: 1px 1px 1px #204766, 1px 1px 1px #204766, 0 -1px 0 #000000, -1px 0 0 #000000;
 }
 #introduction .headline{
   font-weight: 900;
   font-size: 6em;
   text-transform: uppercase;
+  text-shadow: 1px 1px 1px #204766, 1px 1px 1px #204766, 0 -1px 0 #000000, -1px 0 0 #000000;
 }
 #introduction .subhead {
   font-size: 4em;
   font-weight: 900;
   margin-bottom: 40px;
+  text-shadow: 1px 1px 1px #204766, 1px 1px 1px #204766, 0 -1px 0 #000000, -1px 0 0 #000000;
 }
 #introduction .credits {
   font-size: 2em;
@@ -102,6 +105,7 @@ a:hover {
   margin-left: -15%;
   margin-right: -15%;
 }
+
 .copy .image-in-between p.image-caption {
   margin-top: 5px;
   color: #777;
@@ -274,14 +278,18 @@ footer a {
 
   /*copy*/
   .copy .image-in-between {
-    margin-left: 0%;
-    margin-right: 0%;
+    margin-left: -5%;
+    margin-right: -5%;
   }
   .copy .first-letter {
     font-size: 3.25em;
   }
   .copy p {
     font-size: 1em;
+  }
+  .copy p.image-caption {
+    margin-left: 5%;
+    margin-right: 5%;
   }
 
   /*banner*/
@@ -298,6 +306,12 @@ footer a {
   /*related*/
   .related-story {
     margin-bottom: 20px;
+  }
+
+  /*sources*/
+  .image-in-between .chart-source {
+    margin-left: 5%;
+    margin-right: 5%;
   }
 
 }

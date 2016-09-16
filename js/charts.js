@@ -45,39 +45,28 @@ $(document).ready(function(){
     }
   }
 
-  function width2016(x){
-    if (x<=400){
-      return 2;
-    } else if (x > 400 && x<=550){
-      return 4;
-    } else if (x>550 && x<=770){
-      return 5;
-    } else if (x>772&&x<=880){
-      return 4;
-    } else if (x>880 && x<=991){
-      return 5;
-    } else if (x<1180&&x>991){
-      return 4;
+  function formatLakh(x){
+
+    if ($(window).width()>768) {
+
+      var type = typeof(x);
+      if (type == 'number') {
+        x = x.toString();
+      } else if (type == 'string'){
+        x = x.replace(/,/g, '');
+      }
+
+      var lastThree = x.substring(x.length-3);
+      var otherNumbers = x.substring(0,x.length-3);
+      if(otherNumbers != '')
+          lastThree = ',' + lastThree;
+      var res = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree;
+
+      return res;
     } else {
-      return 5;
-    }
-  }
-
-  function format(x){
-    var type = typeof(x);
-    if (type == 'number') {
-      x = x.toString();
-    } else if (type == 'string'){
-      x = x.replace(/,/g, '');
+      return x;
     }
 
-    var lastThree = x.substring(x.length-3);
-    var otherNumbers = x.substring(0,x.length-3);
-    if(otherNumbers != '')
-        lastThree = ',' + lastThree;
-    var res = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree;
-
-    return res;
   }
 
   // size of chart
@@ -219,7 +208,7 @@ $(document).ready(function(){
         } else {
           metricShow = extras.metric
         }
-        return "<strong>"+ d.dateString +"</strong><br /><br /><span style='color:#2980b9;font-weight:900'>" + format(d[category]) + "</span> "+metricShow;
+        return "<strong>"+ d.dateString +"</strong><br /><br /><span style='color:#2980b9;font-weight:900'>" + formatLakh(d[category]) + "</span> "+metricShow;
       });
 
     // call tips
@@ -280,8 +269,10 @@ $(document).ready(function(){
           .style('stroke-width',1)
           .text(yearLabel("2012"));
 
-      var yFormat2012 = format($('#chart_2012 .y.axis .tick:nth-of-type(2) text').html());
-      $('#chart_2012 .y.axis .tick:nth-of-type(2) text').html(yFormat2012);
+      if ($(window).width()>768){
+        var yFormat2012 = formatLakh($('#chart_2012 .y.axis .tick:nth-of-type(2) text').html());
+        $('#chart_2012 .y.axis .tick:nth-of-type(2) text').html(yFormat2012);
+      }
 
       var barArea2012 = svg2012.selectAll(".bar-area")
           .data(data2012);
@@ -437,8 +428,10 @@ $(document).ready(function(){
           .style("text-anchor", "start")
           .text(yearLabel("2013"));
 
-      var yFormat2013 = format($('#chart_2013 .y.axis .tick:nth-of-type(2) text').html());
-      $('#chart_2013 .y.axis .tick:nth-of-type(2) text').html(yFormat2013);
+      if ($(window).width()>768){
+        var yFormat2013 = formatLakh($('#chart_2013 .y.axis .tick:nth-of-type(2) text').html());
+        $('#chart_2013 .y.axis .tick:nth-of-type(2) text').html(yFormat2013);
+      }
 
       var barArea2013 = svg2013.selectAll(".bar-area")
           .data(data2013);
@@ -593,8 +586,10 @@ $(document).ready(function(){
           .style("text-anchor", "start")
           .text(yearLabel("2014"));
 
-      var yFormat2014 = format($('#chart_2014 .y.axis .tick:nth-of-type(2) text').html());
-      $('#chart_2014 .y.axis .tick:nth-of-type(2) text').html(yFormat2014);
+      if ($(window).width()>768){
+        var yFormat2014 = formatLakh($('#chart_2014 .y.axis .tick:nth-of-type(2) text').html());
+        $('#chart_2014 .y.axis .tick:nth-of-type(2) text').html(yFormat2014);
+      }
 
       var barArea2014 = svg2014.selectAll(".bar-area")
           .data(data2014);
@@ -749,8 +744,10 @@ $(document).ready(function(){
           .style("text-anchor", "start")
           .text(yearLabel("2015"));
 
-      var yFormat2015 = format($('#chart_2015 .y.axis .tick:nth-of-type(2) text').html());
-      $('#chart_2015 .y.axis .tick:nth-of-type(2) text').html(yFormat2015);
+      if ($(window).width()>768){
+        var yFormat2015 = formatLakh($('#chart_2015 .y.axis .tick:nth-of-type(2) text').html());
+        $('#chart_2015 .y.axis .tick:nth-of-type(2) text').html(yFormat2015);
+      }
 
       var barArea2015 = svg2015.selectAll(".bar-area")
           .data(data2015);
@@ -905,8 +902,10 @@ $(document).ready(function(){
           .style("text-anchor", "start")
           .text(yearLabel("2016"));
 
-      var yFormat2016 = format($('#chart_2016 .y.axis .tick:nth-of-type(2) text').html());
-      $('#chart_2016 .y.axis .tick:nth-of-type(2) text').html(yFormat2016);
+      if ($(window).width()>768){
+        var yFormat2016 = formatLakh($('#chart_2016 .y.axis .tick:nth-of-type(2) text').html());
+        $('#chart_2016 .y.axis .tick:nth-of-type(2) text').html(yFormat2016);
+      }
 
       var barArea2016 = svg2016.selectAll(".bar-area")
           .data(data2016);
@@ -966,7 +965,7 @@ $(document).ready(function(){
           .attr("class", function(d,i) { return "bar barId2016"+i; })
           .attr("x", function(d) { return x2016(d.date); })
           .attr("width", function (d){
-            return (width/data2016.length)-width2016($(window).width());
+            return (width/data2016.length)-betweenBar($(window).width());
           });
 
       bar2016.exit()
@@ -1054,7 +1053,7 @@ $(document).ready(function(){
 
   drawChart('villages','first');
 
-  $('select').change(function(){
+  $('#chart-filter').change(function(){
     drawChart($(this).val(),'notfirst');
   });
 
